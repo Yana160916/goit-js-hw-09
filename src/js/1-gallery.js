@@ -86,7 +86,6 @@ images.forEach(image => {
   galleryLink.appendChild(galleryImage);
   galleryItem.appendChild(galleryLink);
 
-  galleryContainer.appendChild(galleryItem); 
 });
 
 import SimpleLightbox from 'simplelightbox';
