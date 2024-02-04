@@ -36,7 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
         message: feedbackForm.elements.message.value,
       });
     });
-  } else {
-    console.error('Element with class "feedback-form" not found.');
-  }
+  } 
 });
