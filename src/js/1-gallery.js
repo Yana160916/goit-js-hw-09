@@ -85,13 +85,12 @@ images.forEach(image => {
 
   galleryLink.appendChild(galleryImage);
   galleryItem.appendChild(galleryLink);
-  galleryContainer.appendChild(galleryItem);
-});
 
+  galleryContainer.appendChild(galleryItem); 
+});
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
 
 const lightbox = new SimpleLightbox('.gallery a');
 lightbox.on('show.simplelightbox');
