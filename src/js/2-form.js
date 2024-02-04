@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const feedbackForm = document.querySelector('.feedback-form');
 
-  if (feedbackForm) { // Проверяем, что элемент найден
+  if (feedbackForm) { 
     feedbackForm.addEventListener('input', (event) => {
       if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
         const emailValue = feedbackForm.elements.email.value;
