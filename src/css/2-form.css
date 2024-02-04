@@ -1,14 +1,13 @@
-body {
+
+.feedback-form {
+    padding: 24px;
     color: #2e2f42;
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.64px;
-}
-
-.feedback-form {
-    padding: 24px;
+    display: flex;
 }
 
 label {
