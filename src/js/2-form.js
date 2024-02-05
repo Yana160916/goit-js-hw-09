@@ -12,11 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
           message: messageValue,
         };
 
-          
-
-        if (emailValue !== '' && messageValue !== '') {
-          localStorage.setItem('feedback-form-state', JSON.stringify(feedbackState));
-        }
+        localStorage.setItem('feedback-form-state', JSON.stringify(feedbackState));
       }
     });
 
@@ -33,15 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
 
       const emailValue = feedbackForm.elements.email.value.trim();
-const messageValue = feedbackForm.elements.message.value.trim();
+      const messageValue = feedbackForm.elements.message.value.trim();
 
-      localStorage.removeItem('feedback-form-state');
-      feedbackForm.reset();
+      if (emailValue !== '' && messageValue !== '') {
+        localStorage.removeItem('feedback-form-state');
+        feedbackForm.reset();
 
-      console.log({
-        email: feedbackForm.elements.email.value,
-        message: feedbackForm.elements.message.value,
-      });
+        console.log({
+          email: emailValue,
+          message: messageValue,
+        });
+      }
     });
   } 
 });
