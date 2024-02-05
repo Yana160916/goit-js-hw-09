@@ -64,8 +64,6 @@ const images = [
   },
 ];
 
-
-
 const galleryContainer = document.querySelector('ul.gallery');
 
 images.forEach(image => {
@@ -75,7 +73,7 @@ images.forEach(image => {
   const galleryLink = document.createElement('a');
   galleryLink.classList.add('gallery-link');
   galleryLink.href = image.original;
-  galleryLink.setAttribute('download', ''); 
+  galleryLink.setAttribute('download', '');
 
   const galleryImage = document.createElement('img');
   galleryImage.classList.add('gallery-image');
@@ -85,11 +83,15 @@ images.forEach(image => {
 
   galleryLink.appendChild(galleryImage);
   galleryItem.appendChild(galleryLink);
-
+  galleryContainer.appendChild(galleryItem);
 });
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const lightbox = new SimpleLightbox('.gallery a');
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionData: 'data-source',
+  captionDelay: 250,
+});
+
 lightbox.on('show.simplelightbox');

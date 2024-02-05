@@ -4,15 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (feedbackForm) { 
     feedbackForm.addEventListener('input', (event) => {
       if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-        const emailValue = feedbackForm.elements.email.value;
-        const messageValue = feedbackForm.elements.message.value;
+        const emailValue = feedbackForm.elements.email.value.trim();
+        const messageValue = feedbackForm.elements.message.value.trim();
 
         const feedbackState = {
           email: emailValue,
           message: messageValue,
         };
 
-        localStorage.setItem('feedback-form-state', JSON.stringify(feedbackState));
+          
+
+        if (emailValue !== '' && messageValue !== '') {
+          localStorage.setItem('feedback-form-state', JSON.stringify(feedbackState));
+        }
       }
     });
 
@@ -27,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     feedbackForm.addEventListener('submit', (event) => {
       event.preventDefault();
+
+      const emailValue = feedbackForm.elements.email.value.trim();
+const messageValue = feedbackForm.elements.message.value.trim();
 
       localStorage.removeItem('feedback-form-state');
       feedbackForm.reset();
